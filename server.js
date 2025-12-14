@@ -37,17 +37,42 @@ const pool = mysql.createPool({
 })();
 
 
+const MySQLStore = require('express-mysql-session')(session);
+
+// Trust proxy is required for Vercel/proxies to correctly handle secure cookies
+app.set('trust proxy', 1);
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 app.set('views', 'views');
 
+// Configure session store
+const sessionStore = new MySQLStore({
+    expiration: 10800000, // 3 hours
+    createDatabaseTable: true,
+    schema: {
+        tableName: 'sessions',
+        columnNames: {
+            session_id: 'session_id',
+            expires: 'expires',
+            data: 'data'
+        }
+    }
+}, pool); // Use the existing mysql2 pool
+
 app.use(session({
-    secret: 'your_secret_key_for_session',
+    key: 'session_cookie_name',
+    secret: process.env.SESSION_SECRET || 'your_secret_key_for_session',
+    store: sessionStore,
     resave: false,
-    saveUninitialized: true,
-    cookie: { secure: false }
+    saveUninitialized: false, // Recommended false for login sessions
+    cookie: {
+        secure: true, // Requires https (Vercel provides this)
+        httpOnly: true,
+        maxAge: 10800000 // 3 hours
+    }
 }));
 
 
