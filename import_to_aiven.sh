@@ -19,6 +19,7 @@ fi
   -P "$DB_PORT" \
   -u "$DB_USER" \
   "-p$DB_PASSWORD" \
+  --ssl \
   "$DB_NAME" < backup.sql
 
 if [ $? -eq 0 ]; then
