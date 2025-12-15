@@ -1,327 +1,326 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aoeyaeng Clothing</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Kanit:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Kanit:wght@300;400;500;700&display=swap"
+    rel="stylesheet">
   <style>
-    
-    /* 💥 แก้ไข: กำหนดฟอนต์หลัก */
     body {
-        font-family: 'Kanit', sans-serif; 
-        font-weight: 300; 
-        color: #333; 
+      font-family: 'Kanit', sans-serif;
+      font-weight: 300;
+      color: #333;
     }
-    
+
     .navbar-custom {
       background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
-    padding: 15px 0;
+      padding: 15px 0;
     }
+
     .navbar-custom .navbar-brand {
       color: #fff;
-      /* 💥 แก้ไข: ใช้ Marcellus สำหรับชื่อโลโก้ */
-      font-family: 'Marcellus', serif; 
+      font-family: 'Marcellus', serif;
       font-weight: bold;
-      /* 💥 แก้ไข: ขยายขนาดโลโก้ */
-      font-size: 26px; 
+      font-size: 26px;
     }
+
     .navbar-custom .nav-link {
       color: #fff !important;
       margin: 0 10px;
       font-weight: 500;
-      /* 💥 แก้ไข: ขยายขนาดเมนู */
-      font-size: 20px; 
+      font-size: 20px;
     }
+
     .navbar-custom .nav-link:hover {
       color: #ff8fab !important;
     }
 
-    
+
     .carousel-control-prev-icon,
     .carousel-control-next-icon {
-    background-image: none;
+      background-image: none;
     }
 
     .carousel-control-prev-icon::after {
-    content: '◀'; 
-    font-size: 2rem;
-    color: #8b8b8b;
+      content: '◀';
+      font-size: 2rem;
+      color: #8b8b8b;
     }
 
     .carousel-control-next-icon::after {
-    content: '▶';
-    font-size: 2rem;
-    color: #8b8b8b;
+      content: '▶';
+      font-size: 2rem;
+      color: #8b8b8b;
     }
 
 
     .carousel-item img {
-    width: 100%;
-    max-height: 500px;
-    height: auto;
-    object-fit: contain;
-    background-color: #fff;
-    padding: 10px;
-    border-radius: 15px;
+      width: 100%;
+      max-height: 500px;
+      height: auto;
+      object-fit: contain;
+      background-color: #fff;
+      padding: 10px;
+      border-radius: 15px;
     }
 
 
     .section-title {
       color: #ff8fab;
-      /* 💥 แก้ไข: ใช้ Marcellus สำหรับหัวข้อ */
-      font-family: 'Marcellus', serif; 
+      font-family: 'Marcellus', serif;
       font-weight: 400;
-      font-size: 2.3rem; 
-    margin-bottom: 2rem;
+      font-size: 2.3rem;
+      margin-bottom: 2rem;
       text-align: center;
     }
 
-  
+
     .product-card {
       border: none;
-    border-radius: 15px;
+      border-radius: 15px;
       overflow: hidden;
-      /* 💥 แก้ไข: เพิ่ม transition: all */
-      transition: all 0.5s ease, box-shadow 0.3s ease; 
-      /* 💥 เพิ่ม: จัดการความสูงของ Card */
-      height: 100%; 
+      transition: all 0.5s ease, box-shadow 0.3s ease;
+      height: 100%;
       display: flex;
       flex-direction: column;
     }
+
     .product-card:hover {
       transform: translateY(-8px);
-      /* 💥 แก้ไข: ปรับเงาให้เข้มขึ้นเล็กน้อย */
-      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     }
-    
+
     .product-card img {
       min-height: 250px;
-      max-height: 350px; 
+      max-height: 350px;
       width: 100%;
-      
-      /* 💥 แก้ไข: เปลี่ยนเป็น 'contain' เพื่อให้รูปแสดงเต็ม */
-      object-fit: contain; 
-      
+
+      object-fit: contain;
+
       background-color: #fff;
       padding: 10px;
-      /* 💥 เพิ่ม: Transition สำหรับ Image Zoom */
       transition: transform 0.4s ease;
     }
 
-    /* 💥 เพิ่ม: Image Zoom Effect */
     .product-card:hover img {
-        transform: scale(1.05); 
+      transform: scale(1.05);
     }
-    
+
     .btn-custom {
       background: linear-gradient(45deg, #fbc2eb, #a6c1ee);
-    border: none;
+      border: none;
       color: white;
       font-weight: bold;
       border-radius: 25px;
       padding: 8px 20px;
     }
+
     .btn-custom:hover {
       background: linear-gradient(45deg, #ff9a9e, #fad0c4);
     }
 
-    
+
     .footer-custom {
       background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
-    color: #333;
+      color: #333;
       padding: 2rem 0;
       margin-top: 4rem;
     }
   </style>
 </head>
+
 <body>
 
-<div class="toast-container position-fixed bottom-0 end-0 p-3">
-  <div id="liveToast" class="toast align-items-center text-white bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
-    <div class="d-flex">
-      <div class="toast-body" id="toast-message">
-        Item added to cart!
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="liveToast" class="toast align-items-center text-white bg-success border-0" role="alert"
+      aria-live="assertive" aria-atomic="true">
+      <div class="d-flex">
+        <div class="toast-body" id="toast-message">
+          Item added to cart!
+        </div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+          aria-label="Close"></button>
       </div>
-      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
     </div>
   </div>
-</div>
 
-<nav class="navbar navbar-expand-lg navbar-custom">
-  <div class="container">
-    <a class="navbar-brand d-flex align-items-center" href="/">
-      <i class="fas fa-tshirt me-2" style="font-size: 1.5rem; color: #fff;"></i>
-      Aoeyaeng Clothing
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link active" href="/">Home</a></li>
-     
-        <li class="nav-item"><a class="nav-link" href="/products">Products</a></li> 
-        <li class="nav-item"><a class="nav-link" href="/cart">Cart</a></li>
-        <li class="nav-item"><a class="nav-link" href="/dashboard">Account</a></li> 
-        
-        <% if (typeof isLoggedIn !== 'undefined' && isLoggedIn) { %>
-          <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
-        <% } else { %>
-          <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
-       
-        <% } %>
-      </ul>
-   </div>
-  </div>
-</nav>
+  <nav class="navbar navbar-expand-lg navbar-custom">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="/">
+        <i class="fas fa-tshirt me-2" style="font-size: 1.5rem; color: #fff;"></i>
+        Aoeyaeng Clothing
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="/">Home</a></li>
 
+          <li class="nav-item"><a class="nav-link" href="/products">Products</a></li>
+          <li class="nav-item"><a class="nav-link" href="/cart">Cart</a></li>
+          <li class="nav-item"><a class="nav-link" href="/dashboard">Account</a></li>
 
-<div class="container my-4" id="home">
-  <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner rounded">
-      <div class="carousel-item active">
-        <img src="images/pic1.jpg" class="d-block w-100" alt="Slide 1">
+          <% if (typeof isLoggedIn !=='undefined' && isLoggedIn) { %>
+            <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
+            <% } else { %>
+              <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+
+              <% } %>
+        </ul>
       </div>
-      <div class="carousel-item">
-        <img src="images/pic2.jpg" class="d-block w-100" alt="Slide 2">
-      </div>
-      <div class="carousel-item">
-        <img src="images/pic3.jpg" class="d-block 
+    </div>
+  </nav>
+
+
+  <div class="container my-4" id="home">
+    <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner rounded">
+        <div class="carousel-item active">
+          <img src="images/pic1.jpg" class="d-block w-100" alt="Slide 1">
+        </div>
+        <div class="carousel-item">
+          <img src="images/pic2.jpg" class="d-block w-100" alt="Slide 2">
+        </div>
+        <div class="carousel-item">
+          <img src="images/pic3.jpg" class="d-block 
         w-100" alt="Slide 3">
+        </div>
+        <div class="carousel-item">
+          <img src="images/pic4.png" class="d-block w-100" alt="Slide 4">
+        </div>
+        <div class="carousel-item">
+          <img src="images/pic5.png" class="d-block w-100" alt="Slide 5">
+        </div>
       </div>
-    <div class="carousel-item">
-        <img src="images/pic4.png" class="d-block w-100" alt="Slide 4">
-      </div>
-      <div class="carousel-item">
-        <img src="images/pic5.png" class="d-block w-100" alt="Slide 5">
-      </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon"></span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon"></span>
-    
-    </button>
-  </div>
-</div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
 
-
-<div class="container my-5" id="products">
-  <h2 class="section-title">New Collection</h2>
-  <div class="row g-4">
-    <div class="col-md-4">
-      <div class="card product-card">
-        <img src="images/img1.jpg" class="card-img-top" alt="Pink Pastel Shirt">
-        <div class="card-body text-center">
-          <h5 class="card-title">Pink Pastel Shirt</h5>
-          <p class="card-text">Sweet tones, perfect for any occasion.</p>
-          <button class="btn btn-custom btn-add-to-cart" data-product-id="1">Add to Cart</button> </div>
-     
-      </div>
-    </div>
-    <div class="col-md-4">
-    <div class="card product-card">
-        <img src="images/img2.jpg" class="card-img-top" alt="Blue Striped Shirt">
-        <div class="card-body text-center">
-          <h5 class="card-title">Blue Striped Shirt</h5>
-          <p class="card-text">Bright and beautiful, wear it on a casual day.</p>
-          <button class="btn btn-custom btn-add-to-cart" data-product-id="2">Add to Cart</button> </div>
-      </div>
-    </div>
-  
-    <div class="col-md-4">
-      <div class="card product-card">
-        <img src="images/img3.jpg" class="card-img-top" alt="Grey Striped Shirt">
-        <div class="card-body text-center">
-          <h5 class="card-title">Grey Striped Shirt</h5>
-          <p class="card-text">Korean style, matches any outfit.</p>
-          <button class="btn btn-custom btn-add-to-cart" data-product-id="3">Add to Cart</button> </div>
-      </div>
+      </button>
     </div>
   </div>
-</div>
 
 
-<div class="container my-5" id="about">
-  <h2 class="section-title">About Us</h2>
-  
-  <p class="text-center">"Aoeyaeng Clothing offers cute, quality pastel wear for every moment.
-  Designed for teens and young women, we bring you cheerful styles at sweet prices."</p>
-</div>
+  <div class="container my-5" id="products">
+    <h2 class="section-title">New Collection</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card product-card">
+          <img src="images/img1.jpg" class="card-img-top" alt="Pink Pastel Shirt">
+          <div class="card-body text-center">
+            <h5 class="card-title">Pink Pastel Shirt</h5>
+            <p class="card-text">Sweet tones, perfect for any occasion.</p>
+            <button class="btn btn-custom btn-add-to-cart" data-product-id="1">Add to Cart</button>
+          </div>
 
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card product-card">
+          <img src="images/img2.jpg" class="card-img-top" alt="Blue Striped Shirt">
+          <div class="card-body text-center">
+            <h5 class="card-title">Blue Striped Shirt</h5>
+            <p class="card-text">Bright and beautiful, wear it on a casual day.</p>
+            <button class="btn btn-custom btn-add-to-cart" data-product-id="2">Add to Cart</button>
+          </div>
+        </div>
+      </div>
 
-<div class="container my-5" id="contact">
-  <h2 class="section-title">Contact</h2>
-  <form class="mx-auto" style="max-width:500px;">
-    <div class="mb-3">
-      <label class="form-label">Name</label>
-      <input type="text" class="form-control" required>
+      <div class="col-md-4">
+        <div class="card product-card">
+          <img src="images/img3.jpg" class="card-img-top" alt="Grey Striped Shirt">
+          <div class="card-body text-center">
+            <h5 class="card-title">Grey Striped Shirt</h5>
+            <p class="card-text">Korean style, matches any outfit.</p>
+            <button class="btn btn-custom btn-add-to-cart" data-product-id="3">Add to Cart</button>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="mb-3">
-      <label class="form-label">Email</label>
-      <input type="email" class="form-control" required>
-    </div>
-    <div class="mb-3">
-      <label class="form-label">Message</label>
-      <textarea class="form-control" rows="4" required></textarea>
-    </div>
-  
-    <button type="submit" class="btn btn-custom w-100">Send Message</button>
-  </form>
-</div>
-
-
-<footer class="footer-custom text-center">
-  <div class="container">
-    <p class="mb-0">&copy; 2025 Aoeyaeng Clothing | Designed by Sirikorn Chaowacharoen</p>
   </div>
-</footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-document.querySelectorAll('.btn-add-to-cart').forEach(button => {
-    button.addEventListener('click', function() {
+
+  <div class="container my-5" id="about">
+    <h2 class="section-title">About Us</h2>
+
+    <p class="text-center">"Aoeyaeng Clothing offers cute, quality pastel wear for every moment.
+      Designed for teens and young women, we bring you cheerful styles at sweet prices."</p>
+  </div>
+
+
+  <div class="container my-5" id="contact">
+    <h2 class="section-title">Contact</h2>
+    <form class="mx-auto" style="max-width:500px;">
+      <div class="mb-3">
+        <label class="form-label">Name</label>
+        <input type="text" class="form-control" required>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input type="email" class="form-control" required>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Message</label>
+        <textarea class="form-control" rows="4" required></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-custom w-100">Send Message</button>
+    </form>
+  </div>
+
+
+  <footer class="footer-custom text-center">
+    <div class="container">
+      <p class="mb-0">&copy; 2025 Aoeyaeng Clothing | Designed by Sirikorn Chaowacharoen</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.querySelectorAll('.btn-add-to-cart').forEach(button => {
+      button.addEventListener('click', function () {
         const productId = this.getAttribute('data-product-id');
-        
+
         fetch('/add-to-cart', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ product_id: productId })
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ product_id: productId })
         })
-        .then(response => response.json())
-        .then(data => {
-            
+          .then(response => response.json())
+          .then(data => {
+
             if (!data.success) {
-                // If not logged in, show alert and redirect
-                alert(data.message); 
-                window.location.href = '/login';
+              alert(data.message);
+              window.location.href = '/login';
             } else {
-                // 💥 แก้ไข: แสดง Toast แทน alert
-                const toastEl = document.getElementById('liveToast');
-                const toastMsg = document.getElementById('toast-message');
-                const toast = new bootstrap.Toast(toastEl);
+              const toastEl = document.getElementById('liveToast');
+              const toastMsg = document.getElementById('toast-message');
+              const toast = new bootstrap.Toast(toastEl);
 
-                toastMsg.textContent = data.message;
-                
-                // Set background based on success/error (assuming server sends a success message)
-                toastEl.classList.remove('bg-danger');
-                toastEl.classList.add('bg-success');
+              toastMsg.textContent = data.message;
 
-                toast.show();
+              toastEl.classList.remove('bg-danger');
+              toastEl.classList.add('bg-success');
+
+              toast.show();
             }
-        })
-        .catch(error => {
+          })
+          .catch(error => {
             console.error('Error:', error);
-            alert('Please log in before adding items to the cart.'); 
-        });
+            alert('Please log in before adding items to the cart.');
+          });
+      });
     });
-});
-</script>
+  </script>
 </body>
+
 </html>
